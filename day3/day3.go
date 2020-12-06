@@ -25,7 +25,7 @@ func Day3() {
 		counter = c * counter
 	}
 
-	log.Println("the multiple of all number of trees encountered: ", counter)
+	log.Println("day3 | the multiple of all number of trees encountered: ", counter)
 }
 
 func getNumberOfTree(width int, mm [][]bool, right int, down int) int {

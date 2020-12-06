@@ -9,7 +9,7 @@ import (
 	"strconv"
 )
 
-func Day1()  {
+func Day1() {
 	content, err := ioutil.ReadFile("day1/input.txt")
 	if err != nil {
 		log.Fatalln("Cannot read input file")
@@ -27,41 +27,41 @@ func Day1()  {
 	}
 
 	sort.Ints(result)
-	i:=0
-	j:=len(result) -1
+	i := 0
+	j := len(result) - 1
 
 	for i < j {
-		sum :=result[i] + result[j]
+		sum := result[i] + result[j]
 		if sum == 2020 {
-			log.Println("two result found:", result[i] , result[j], result[i] * result[j])
+			log.Println("day1 | two result found:", result[i], result[j], result[i]*result[j])
 			break
-		}else if sum >2020 {
-			j= j - 1
+		} else if sum > 2020 {
+			j = j - 1
 		} else {
-			i = i+1
+			i = i + 1
 		}
 	}
 
-	i=0
-	j=len(result) -1
-	out: for i < j {
-		k:=i+1
-		l:=j
+	i = 0
+	j = len(result) - 1
+out:
+	for i < j {
+		k := i + 1
+		l := j
 		newSum := 2020 - result[i]
 
-		for  k<l {
+		for k < l {
 			sum := result[l] + result[k]
 			if sum == newSum {
-				log.Println("tree result found:", result[i] , result[k], result[l], result[i] * result[k] * result[l])
+				log.Println("day1 | tree result found:", result[i], result[k], result[l], result[i]*result[k]*result[l])
 				break out
-			}else if sum > newSum {
-				l=l-1
-			}else {
-				k=k+1
+			} else if sum > newSum {
+				l = l - 1
+			} else {
+				k = k + 1
 			}
 		}
-		i=i+1
+		i = i + 1
 	}
-
 
 }

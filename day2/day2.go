@@ -52,8 +52,8 @@ func Day2() {
 		}
 	}
 
-	log.Println("Total valid password for first policy: ", count)
-	log.Println("Total valid password for second policy: ", count2)
+	log.Println("day2 | Total valid password for first policy: ", count)
+	log.Println("day2 | Total valid password for second policy: ", count2)
 }
 
 func getInput() *[]Policy {
